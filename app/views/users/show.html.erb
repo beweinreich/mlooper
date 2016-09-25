@@ -1,0 +1,15 @@
+<% if user_signed_in? && current_user == @user %>
+  <div class="well">
+    <h3>User settings</h3>
+    <div id="user-privacy-toggle"><%= render partial: "privacy", locals: { user: current_user } %></div>
+    <hr />
+
+    <h3>Replacements</h3>
+    When you forward an email to the sp@mlooper, you might want us to parse out sensitive words.<br/>Enter the words you want us to strip and replace it with below.
+    <div id="replacements-table"><%= render partial: "/replacements/table", locals: { replacements: current_user.replacements } %></div>
+  </div>
+<% end %>
+
+<h3>Conversations</h3>
+To get started, forward a spammy email to sp@mlooper.com !
+<%= render partial: "/conversations/table" %>

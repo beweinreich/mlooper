@@ -1,0 +1,5 @@
+<%= form_for(user, remote: true) do |f| %>
+  Emails I forward to the sp@mlooper.com will be marked <b><%=user.privacy%></b>.<br />
+  <%=f.hidden_field :privacy, value: user.privacy=='public' ? 'private' : 'public' %>
+  <%=f.submit "Make My Emails #{user.privacy=='public' ? 'Private' : 'Public'}", class: "btn btn-xs btn-default" %>
+<% end %>

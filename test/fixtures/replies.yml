@@ -1,0 +1,7 @@
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: Wow! This sounds like an awesome opportunity. Can you tell me a little more about it?
+
+# two:
+#   content: MyText

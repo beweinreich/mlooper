@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conversations.each do |conversation| %>
+      <% #if conversation.emails.count > 0 %>
+        <tr>
+          <% if @user && @user == current_user %>
+            <td id="privacy-button-<%=conversation.id%>">
+              <%= render partial: "/conversations/privacy_button", locals: { conversation: conversation } %>
+            </td>
+          <% end %>
+          <td><%=conversation.name%> <%= link_to "(Read)", conversation %></td>
+          <td>Last spoken to <%=time_ago_in_words(conversation.emails.last.created_at) %> ago</td>
+          <td>Chatting for <%=conversation.duration%> days</td>
+          <td><%= link_to "#{pluralize((conversation.emails.count/2), 'email')}", conversation %></td>
+        </tr>
+      <%# end %>
+    <% end %>
+  </tbody>
+</table>

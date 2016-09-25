@@ -1,0 +1,6 @@
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  looped_with: "john@mlooper.com"
+  spammers_email: "spammer@example.com"
+  disabled: 0

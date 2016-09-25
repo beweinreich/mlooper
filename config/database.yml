@@ -1,0 +1,15 @@
+development:
+  adapter: mysql2
+  database: mlooper
+  host: localhost
+  socket: /var/mysql/mysql.sock
+  username: root
+  password: root
+
+test:
+  adapter: mysql2
+  database: mlooper_test
+  host: localhost
+  socket: /var/mysql/mysql.sock
+  username: root
+  password: root

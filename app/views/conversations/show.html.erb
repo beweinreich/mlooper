@@ -1,0 +1,21 @@
+<h1>Conversation with <%=@conversation.name %></h1>
+<br />
+<table class="table table-striped">
+	<% @conversation.emails.each_with_index do |email, index| %>
+	<tr>
+		<td width="20%">
+      <b><%= email.incoming? ? @conversation.name : @conversation.user.full_looper_name %>:</b>
+      <br />
+      <small><%=local_time(email.incoming? ? email.created_at.stamp("March 3rd, 2014 10:23am") : (email.created_at + 5.minutes).stamp("March 3rd, 2014 10:23am")) %></small>
+      <% if email.needs_to_be_sent==true%><br /><small>(Pending Delivery)</small><% end %>
+    </td>
+    <% if index==0 %>
+      <td><%=simple_format(email.body_without_forwarded_text.html_safe)%></td>
+    <% else %>  
+  		<td><%=simple_format(email.body_without_previous_responses.html_safe)%></td>
+    <% end %>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to 'Back', root_url %>

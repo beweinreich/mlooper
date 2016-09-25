@@ -1,0 +1,11 @@
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   word: MyString
+#   replacement_word: MyString
+#   user_id: 1
+
+# two:
+#   word: MyString
+#   replacement_word: MyString
+#   user_id: 1

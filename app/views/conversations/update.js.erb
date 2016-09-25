@@ -1,0 +1,1 @@
+$("#privacy-button-<%=@conversation.id%>").html("<%= raw escape_javascript(render partial: 'privacy_button', locals: { conversation: @conversation } ) %>")

@@ -1,0 +1,2 @@
+$("<tr id='replacement-row-<%=@replacement.id%>'><%= raw escape_javascript(render partial: '/replacements/row', locals: { replacement: @replacement } ) %>").insertBefore("#replacements-table tr:last");
+$("#new_replacement")[0].reset();

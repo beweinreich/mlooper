@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Replace this word</th>
+      <th>with this word</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% replacements.each do |replacement| %>
+      <tr id="replacement-row-<%=replacement.id%>">
+        <%= render partial: "/replacements/row", locals: { replacement: replacement } %>
+      </tr>
+    <% end %>
+    <%= render partial: "/replacements/form" %>
+  </tbody>
+</table>

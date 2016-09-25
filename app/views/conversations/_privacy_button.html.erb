@@ -1,0 +1,10 @@
+<%=conversation.privacy.capitalize%>
+<%= form_for(conversation, remote: true) do |f| %>
+  <% if conversation.is_public? %>
+    <%=f.hidden_field :privacy, value: "private" %>
+    <%=f.submit "Make Private", class: "btn btn-xs btn-default" %>
+  <% else %>
+    <%=f.hidden_field :privacy, value: "public" %>
+    <%=f.submit "Make Public", class: "btn btn-xs btn-default" %>
+  <% end %>
+<% end %>

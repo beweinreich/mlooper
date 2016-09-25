@@ -1,0 +1,15 @@
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  conversation: one
+  to: "john@mlooper.com"
+  from: "spammer@example.com"
+  subject: "My spammy email"
+  body: "Hello I'm a spammer!"
+
+two:
+  conversation: one
+  to: "spammer@example.com"
+  from: "john@mlooper.com"
+  subject: "Re: My spammy email"
+  body: "I'm spamming you back!"

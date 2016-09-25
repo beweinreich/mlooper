@@ -1,0 +1,13 @@
+<tr>
+  <%= form_for(Replacement.new, remote: true) do |f| %>
+    <td>
+      <%=f.text_field :word, class: "form-control input-sm", placeholder: "My Company Name" %>
+    </td>
+    <td>
+      <%=f.text_field :replacement_word, class: "form-control input-sm", placeholder: "Kalamazoo Industries" %>
+    </td>
+    <td>
+      <%=f.submit "Save", class: "btn btn-xs btn-default" %>
+    </td>
+  <% end %>
+</tr> 

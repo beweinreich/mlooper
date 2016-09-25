@@ -1,0 +1,33 @@
+<h1>Thanks for confirming your account!</h1>
+
+<p>Your first email is scheduled to be sent at <b><%=local_time(@first_email.send_at.stamp("March 3rd, 2014 10:23am")) %></b>. Here is a preview of what will be sent to the spammer:</p>
+
+<br />
+<blockquote>
+  <b>To: <%=@first_email.conversation.spammers_email %></b><br /><br />
+  <%=simple_format(@first_email.body_without_forwarded_text.html_safe)%>
+</blockquote>
+
+<hr />
+
+<div class="col-sm-4 col-sm-offset-4">
+  <p>If you'd like to edit the email above (i.e. remove your personal identifying information) before it goes out, then create a password below to login to your account.</p>
+
+  <%= form_for(@user, url: password_path(@user), html: { method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token, value: @reset_token %>
+
+    <div class="form-group">
+      <%= f.label :password, "New password" %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirm new password" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
+    <br />
+    <div class="actions">
+      <%= f.submit "Create My Password", class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>
