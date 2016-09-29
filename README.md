@@ -11,6 +11,8 @@ Okay, enough excuses. Here's some info to get you started (if you're running it 
 1. Setup Inbound Parse on Sendgrid (https://app.sendgrid.com/settings/parse)
 2. Give Inbound Parse a **domain name** to watch and an **endpoint to trigger**. For the mlooper, this would trigger: http://www.mlooper.com/email_processor
 
+If you notice in the `Gemfile` there is a [griddler](https://github.com/thoughtbot/griddler) gem. That handles some magic of incoming sendgrid parse events sent to the `email_processor` endpoint.
+
 
 # Setup Heroku Scheduler
 
